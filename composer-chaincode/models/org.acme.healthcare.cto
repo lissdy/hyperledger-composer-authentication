@@ -1,0 +1,45 @@
+namespace org.acme.healthcare
+
+enum appointmentStatus {
+  o REQUESTED
+  o REJECETED
+  o SCHEDULED
+  o COMPLETED
+}
+
+participant doctor identified by name {
+  o String name
+}
+
+participant patient identified by name {
+  o String name
+  o String healthIssue
+}
+
+asset appointment identified by appointmentId {
+  o String appointmentId
+  o DateTime appointmentTime
+  o doctor doctor
+  o patient patient
+  o appointmentStatus appointmentStatus
+}
+
+asset results identified by resultsId {
+  o String resultsId
+  o appointment appointment optional
+  o String bloodPressure
+  o String weight
+  o String doctorNotes
+}
+
+transaction makeAppointment {
+  o doctor doctor
+  o patient patient
+  o DateTime appointmentTime
+  o appointmentStatus appointmentStatus default = 'REQUESTED'
+}
+
+transaction issueResults {
+  o String appointmentId
+  o results results
+}

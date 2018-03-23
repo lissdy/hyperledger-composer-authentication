@@ -1,0 +1,15 @@
+{
+  "name": "composer-external",
+  "version": "1.0.0",
+  "description": "work as composer client",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Lisa",
+  "license": "ISC",
+  "dependencies": {
+    "composer-client": "^0.16.5",
+    "composer-common": "^0.16.5"
+  }
+}

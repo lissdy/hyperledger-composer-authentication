@@ -1,0 +1,22 @@
+{
+  "name": "healthcare-network",
+  "version": "0.0.4",
+  "description": "Test healthcare network for multiple-user Feb 28",
+  "scripts": {
+    "test": "mocha --recursive"
+  },
+  "author": "Tyler",
+  "email": "tyler.s.wells@pwc.com",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "composer-admin": "latest",
+    "composer-client": "latest",
+    "composer-common": "latest",
+    "composer-connector-embedded": "latest",
+    "chai": "latest",
+    "eslint": "latest",
+    "istanbul": "latest",
+    "mkdirp": "latest",
+    "mocha": "latest"
+  }
+}

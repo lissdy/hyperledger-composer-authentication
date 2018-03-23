@@ -1,0 +1,12 @@
+COMPOSER_PROVIDERS='{
+    "github": {
+        "provider": "github",
+        "module": "passport-github",
+        "clientID": "822bfdaa841fd8d40f76",
+        "clientSecret": "166b341a25e2cba04dd35384a5d5d9fed6275e6b",
+        "authPath": "/auth/github",
+        "callbackURL": "/auth/github/callback",
+        "successRedirect": "/",
+        "failureRedirect": "/"
+    }
+}'
