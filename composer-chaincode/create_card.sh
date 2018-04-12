@@ -9,7 +9,6 @@ if [ !`uname` == "Darwin" ]; then # no need to do this step on MAC
   sudo chown -R $USER ~/.composer
 fi
 
-
 # delete old cards
 composer card delete -c PeerAdmin@healthcare-network
 composer card delete -c admin@healthcare-network
