@@ -11,8 +11,8 @@ fi
 
 
 # delete old cards
-composer card delete -n PeerAdmin@healthcare-network
-composer card delete -n admin@healthcare-network
+composer card delete -c PeerAdmin@healthcare-network
+composer card delete -c admin@healthcare-network
 
 # create card for org amdin to install and instantiate chaincode(bna)
 # A card file named PeerAdmin@healthcare-network.card will be created after this step
@@ -23,9 +23,10 @@ composer card import -f PeerAdmin@healthcare-network.card
 # install the Hyperledger Composer runtime onto all of the Hyperledger Fabric peer nodes that specified in the connection profile file
 # -n option must contain the same name as the business network name you intend to run on the Hyperledger Fabric peers.
 # Only business networks with names(specified in package.json) matching the -n option given in this command will successfully run.
-composer runtime install -c PeerAdmin@healthcare-network -n healthcare-network
+composer network install -c PeerAdmin@healthcare-network -a healthcare-network@0.0.3.bna
 # start the blockchain business network(instantiate chaincode)
-composer network start -c PeerAdmin@healthcare-network -a healthcare-network@0.0.3.bna -A admin -S adminpw
+# composer network start -c PeerAdmin@healthcare-network -a healthcare-network@0.0.3.bna -A admin -S adminpw
+composer network start --networkName healthcare-network --networkVersion 0.0.3 -A admin -S adminpw -c PeerAdmin@fabric-network
 composer card import -f admin@healthcare-network.card
 
 # update bna
